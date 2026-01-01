@@ -39,8 +39,23 @@ Key objectives:
 
 ## Project Walkthrough
 
-### 1. Cloud Environment Setup 
+### Step 1: Project Architecture Design 
 
 Create Vultr account and design network diagram
 <img width="1632" height="640" alt="DRAW" src="https://github.com/user-attachments/assets/02246f23-19e1-4d26-858f-f8df9cd2243d" />
 
+### Step 2: Virtual Machine Deployment on Vultr
+1.Deploy 3 VMs:
+- Domain Controller: Windows Server 2022 (2 vCPU / 4 GB RAM / 80GB Storage).
+- Test Machine: Windows 10/11 (1 vCPU / 2 GB RAM / 55GB Storage).
+- Splunk Server: Ubuntu 22.04 (4 vCPU / 8 GB RAM / 160GB Storage).
+- Disable automatic backups on each machine before deploying.
+
+<img width="1606" height="420" alt="image" src="https://github.com/user-attachments/assets/2af438af-86ba-4ee5-bec6-806f04366217" />
+
+2.Create new firewall groups:
+SSH port 22 (for Linux administration).
+RDP port 3389 (for Windows remote access).
+Port 8000 (for Splunk web interface) For security during testing, set the Source for all connections to "My IP" to restrict access to your current location.
+
+<img width="1607" height="702" alt="image" src="https://github.com/user-attachments/assets/f5a290fc-8753-4a35-b09f-a0174fa735a5" />
