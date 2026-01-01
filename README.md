@@ -37,4 +37,10 @@ Key objectives:
 - Slack - Team communication platform for real-time incident notifications.
 - APIs - For integrating different security tools and platforms.
 
-## Steps
+## Project Walkthrough
+
+### 1. Cloud Environment Setup 
+
+Create Vultr account and design network diagram
+<img width="1632" height="640" alt="DRAW" src="https://github.com/user-attachments/assets/02246f23-19e1-4d26-858f-f8df9cd2243d" />
+
