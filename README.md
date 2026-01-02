@@ -74,3 +74,19 @@ Create Vultr account and design network diagram
 - Enter the VPC IP address and subnet mask for that machine
 
 <img width="762" height="708" alt="image" src="https://github.com/user-attachments/assets/f76d7c10-e022-472d-8917-fbebc8c055ba" />
+
+### Step 3:Active Directory Configuration
+- Remote into Domain Controller VM.
+- Open Server Manager and select Add Roles and Features.
+- Install Active Directory Domain Services (AD DS).
+
+  <img width="1038" height="788" alt="image" src="https://github.com/user-attachments/assets/bb7c9cf1-6347-4f81-ba28-5b741bc187a8" />
+
+- Once finished, select the alerts icon at the top and click the alert that says "Promote server to Domain Controller". When prompted, create a new forest 
+
+<img width="961" height="752" alt="image" src="https://github.com/user-attachments/assets/157ea301-5502-4e3a-9642-5754f0ef942f" />
+
+- Once installation is complete, search for **Active Directory Users and Computers** 6. Inside your newly created directory, right click > new > User 7. Create a user
+
+<img width="950" height="658" alt="image" src="https://github.com/user-attachments/assets/3fbc3ac7-74a9-425b-9d2d-2da73f4ca0ed" />
+
