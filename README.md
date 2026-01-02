@@ -54,8 +54,23 @@ Create Vultr account and design network diagram
 <img width="1606" height="420" alt="image" src="https://github.com/user-attachments/assets/2af438af-86ba-4ee5-bec6-806f04366217" />
 
 2.Create new firewall groups:
-SSH port 22 (for Linux administration).
-RDP port 3389 (for Windows remote access).
-Port 8000 (for Splunk web interface) For security during testing, set the Source for all connections to "My IP" to restrict access to your current location.
+- SSH port 22 (for Linux administration).
+- RDP port 3389 (for Windows remote access).
+- Port 8000 (for Splunk web interface) For security during testing, set the Source for all connections to "My IP" to restrict access to your current location.
 
 <img width="1607" height="702" alt="image" src="https://github.com/user-attachments/assets/f5a290fc-8753-4a35-b09f-a0174fa735a5" />
+
+3.Enable VPC networking on each machine so VMs can communicate privately:
+- Update Firewall Group assignment for each VM
+- Make note of VPC IP address for each VM
+
+  <img width="1608" height="655" alt="image" src="https://github.com/user-attachments/assets/64173c0d-777a-411f-8d44-3a0458bc7b3d" />
+
+4.Assign static IPs to DC/Test machines for reliable DNS/domain setup:
+- Once you remote in to each VM, right click on network icon at bottom right and select change network settings
+- Right click ethernet instance 0 2 and select propertires
+- Double click internet protocol version 4
+- Select "Use the following IP address"
+- Enter the VPC IP address and subnet mask for that machine
+
+<img width="762" height="708" alt="image" src="https://github.com/user-attachments/assets/f76d7c10-e022-472d-8917-fbebc8c055ba" />
