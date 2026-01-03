@@ -120,4 +120,59 @@ You  may need to configure RDP permissions to allow users to remote in. Search f
 
  <img width="1433" height="688" alt="image" src="https://github.com/user-attachments/assets/5a90c6c1-ab98-43ae-8bb9-cad9ed6b0bac" />
 
+ Configuring Data Receiving (Port Forwarding).
+
+<img width="1597" height="728" alt="image" src="https://github.com/user-attachments/assets/3666181c-9aae-4fae-9ce1-88425d820937" />
+
+- Under "Receive data" section, click on Configure receiving.
+
+<img width="1608" height="537" alt="image" src="https://github.com/user-attachments/assets/68de258e-3361-4534-9cab-03b5007a1f8a" />
+
+- Click on New Receiving Port to create a new data input port and then click on save.
+
+<img width="1606" height="425" alt="image" src="https://github.com/user-attachments/assets/9fccdb2e-6cd8-4f68-bfd8-64744b3a040c" />
+
+### Step 5:Installing and Configuring Splunk Universal Forwarder on Windows Machines
+- Log into Splunk Web on DC and Test Machine and install Splunk Universal Forwarders on both.
+<img width="606" height="458" alt="image" src="https://github.com/user-attachments/assets/b8a613f2-2109-460e-973b-0caf3255bfb8" />
+
+- In the receiving indexer configuration, enter the Splunk server's private IP address and port 9997 (the default Splunk forwarding port).
+<img width="615" height="468" alt="image" src="https://github.com/user-attachments/assets/aca7a8dd-e633-4669-bbae-94a3fc26c3cc" />
+
+Configuring Log Collection
+- Now we need to configure which logs the forwarder will send to Splunk manually. Navigate to: C:\Program Files\SplunkUniversalForwarder\etc\system\default
+- Copy the inputs.conf file from the default directory.
+
+<img width="1460" height="767" alt="image" src="https://github.com/user-attachments/assets/c5a8499d-a860-42cb-9aad-4e827ada80e7" />
+
+- Paste the inputs.conf file into: C:\Program Files\SplunkUniversalForwarder\etc\system\local
+
+<img width="1336" height="672" alt="image" src="https://github.com/user-attachments/assets/70499e2c-8037-4e14-a2cb-60ea4a34dd3a" />
+Open inputs.conf file in Notepad with Admin Permissions and scroll to the bottom. Add the following code:
+[WinEventLog://Security]
+index=<Put your index name>
+disabled=false
+
+<img width="1326" height="685" alt="image" src="https://github.com/user-attachments/assets/f12e6b6c-54d7-4a2c-8337-4665fca7ba22" />
+
+- Search for Services on the machine and open the SplunkForwarder service.
+- Select log on tab > check local system account, and apply
+- Restart the service. If the restart fails, right-click again and choose Start. 
+
+<img width="1606" height="856" alt="image" src="https://github.com/user-attachments/assets/e831dfd0-70be-45d6-ac00-748ce4879dbf" />
+
+- Navigate back to Splunk and select Apps > Search and Reporting.
+- In the query box, type index=< Put your index name> and hit search.
+- Note: If you don't see anything, may need to update Vultr and host firewall rules for port 9997. Then try again. You should see logs.
+- Query Event ID 4624 (successful logins) in Splunk.
+- Refine query to detect RDP (Logon Type 7 and 10) logins:
+ index=<Put your index name> EventCode=4624 (Logon_Type=10 OR Logon_Type=7) Source_Network_Address!="-"
+ <img width="940" height="90" alt="image" src="https://github.com/user-attachments/assets/2c1095a0-26a3-40e3-bf13-b375b452523b" />
+
+- Save query as an alert
+- Runs every 1 minute (cron: * * * * *)
+- Triggers on unauthorized RDP logins
+- Severity: Medium
+
+Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing source to Anywhere******
   
