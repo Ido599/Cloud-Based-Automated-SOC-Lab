@@ -90,3 +90,34 @@ Create Vultr account and design network diagram
 
 <img width="950" height="658" alt="image" src="https://github.com/user-attachments/assets/3fbc3ac7-74a9-425b-9d2d-2da73f4ca0ed" />
 
+- RDP into the test machine next and search for This PC.
+- Select Rename this PC (Advanced) > Change.
+- Select Member of Domain and enter the domain name you created and the password.
+- Join Test Machine to the domain (You may need to add DomainController IP address to DNS records).
+
+<img width="1113" height="906" alt="image" src="https://github.com/user-attachments/assets/2ba4cf3c-3b03-4fcf-872e-cceecc866ba0" />
+
+<img width="1447" height="873" alt="image" src="https://github.com/user-attachments/assets/4c85fd6d-b59f-4b5d-ba50-b073f319f707" />
+
+You  may need to configure RDP permissions to allow users to remote in. Search for "Allow Remote Connections To This Computer" and add the user you created.
+
+<img width="1076" height="827" alt="image" src="https://github.com/user-attachments/assets/7c74bffc-c55f-48c5-b73c-5c98755747ca" />
+
+### Step 4:Splunk Installation & Configuration
+- SSH into Splunk Linux system and update all repositories with apt-get update && apt-get upgrade 
+- Install Splunk Enterprise (.deb package) by copying wget link and entering in CLI.
+- Run the command: dpkg -i splunk-9.4.3-237ebbd22314-linux-amd64.deb cd /opt/splunk/bin/ ./splunk start 
+- Navigate to Splunk file and run command ./splunk start
+- Enable port 8000 on the Ubuntu firewall: ufw allow 8000
+  <img width="1222" height="630" alt="image" src="https://github.com/user-attachments/assets/965a7b95-3297-4c13-a11c-c3a71e4210d1" />
+
+- Access Splunk in the browser by using the address splunk-VM-ip-address:8000
+
+<img width="1683" height="717" alt="image" src="https://github.com/user-attachments/assets/83ad2bd3-0c4f-4356-a32d-45b8e8d12ca5" />
+
+- In Splunk Web, go to "Find more apps" and install Splunk Add-on for Microsoft Windows
+- In settings, create index for Windows Security logs.
+
+ <img width="1433" height="688" alt="image" src="https://github.com/user-attachments/assets/5a90c6c1-ab98-43ae-8bb9-cad9ed6b0bac" />
+
+  
