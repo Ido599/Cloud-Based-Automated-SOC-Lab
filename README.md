@@ -167,15 +167,16 @@ disabled=false
 - Query Event ID 4624 (successful logins) in Splunk.
 - Refine query to detect RDP (Logon Type 7 and 10) logins:
  index=<Put your index name> EventCode=4624 (Logon_Type=10 OR Logon_Type=7) Source_Network_Address!="-"
- <img width="940" height="90" alt="image" src="https://github.com/user-attachments/assets/2c1095a0-26a3-40e3-bf13-b375b452523b" />
+
+<img width="1595" height="628" alt="image" src="https://github.com/user-attachments/assets/a2fc7e75-3758-4967-bbe3-c05c72261fa5" />
 
 - Save query as an alert
 - Runs every 1 minute (cron: * * * * *)
 - Triggers on unauthorized RDP logins
 - Severity: Medium
 
-Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing source to Anywhere******
- <img width="380" height="25" alt="image" src="https://github.com/user-attachments/assets/ebd6fda9-125f-4bc4-a608-157ab68300e9" />
+Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing source to Anywhere
+
  <img width="1508" height="701" alt="image" src="https://github.com/user-attachments/assets/2ef34f50-d8f9-453a-9ada-5c135a934e02" />
 
 ### Step 6: SOAR Automation with Shuffle and Slack Integration
@@ -188,9 +189,21 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
 - Copy the webhook URI, navigate to your alert in Splunk > Edit > Add Action > Webhook > Paste URI > Save
   <img width="1602" height="697" alt="image" src="https://github.com/user-attachments/assets/5006aff6-7f8d-4764-a192-57714756e884" />
 
- Adding Slack Integration
--In Shuffle's search field (top left), type "Slack", click on it, and drag the Slack connector to the work area.
-<img width="1596" height="705" alt="image" src="https://github.com/user-attachments/assets/ecd94385-275d-4a05-9b5f-af813f277259" />
+ Adding HTTP Integration
+-In Shuffle's search field (top left), type "HTTP", click on it, and drag the Slack connector to the work area.תמונה לא נכונה
+<img width="1610" height="632" alt="image" src="https://github.com/user-attachments/assets/57b2e13c-cbde-484e-9451-482dd33bae57" />
+
 
 - Create a new channel in Slack called #alerts
-- In Shuffle, connect the webhook to slack.
+- Go to the Slack API dashboard and select your workspace.
+- Navigate to Incoming Webhooks in the sidebar and toggle the feature to On.
+- Click Add New Webhook to Workspace, select the desired channel (e.g., #alerts), and click Allow.
+- Copy the Webhook URL generated (it will look like
+
+<img width="1595" height="552" alt="image" src="https://github.com/user-attachments/assets/280b6d21-719a-4fb3-b0b1-78de558117bc" />
+
+- Open your Shuffle Workflow and locate the HTTP Node or the dedicated Slack App Node.
+- In the Node settings, set the URL field to the Webhook URL you copied from the Slack API.
+
+<img width="1582" height="642" alt="image" src="https://github.com/user-attachments/assets/881981a1-6398-409d-9875-67f6bdd735eb" />
+
