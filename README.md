@@ -190,7 +190,7 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
   <img width="1602" height="697" alt="image" src="https://github.com/user-attachments/assets/5006aff6-7f8d-4764-a192-57714756e884" />
 
  Adding HTTP Integration
--In Shuffle's search field (top left), type "HTTP", click on it, and drag the Slack connector to the work area.תמונה לא נכונה
+-In Shuffle's search field (top left), type "HTTP", click on it, and drag to the work area.
 <img width="1610" height="632" alt="image" src="https://github.com/user-attachments/assets/57b2e13c-cbde-484e-9451-482dd33bae57" />
 
 
@@ -206,4 +206,9 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
 - In the Node settings, set the URL field to the Webhook URL you copied from the Slack API.
 
 <img width="1582" height="642" alt="image" src="https://github.com/user-attachments/assets/881981a1-6398-409d-9875-67f6bdd735eb" />
+
+- Rerun one of the logs from Explore Runs to test the complete integration.
+<img width="506" height="592" alt="image" src="https://github.com/user-attachments/assets/01777012-6255-42be-a976-e27996276b3a" />
+### NEED FOR HTTP WITH 200 OK PICTURE
+
 
