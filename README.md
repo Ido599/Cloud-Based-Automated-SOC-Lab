@@ -175,4 +175,22 @@ disabled=false
 - Severity: Medium
 
 Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing source to Anywhere******
-  
+ <img width="380" height="25" alt="image" src="https://github.com/user-attachments/assets/ebd6fda9-125f-4bc4-a608-157ab68300e9" />
+ <img width="1508" height="701" alt="image" src="https://github.com/user-attachments/assets/2ef34f50-d8f9-453a-9ada-5c135a934e02" />
+
+### Step 6: SOAR Automation with Shuffle and Slack Integration
+- Create new workflow in Shuffle.
+<img width="612" height="455" alt="image" src="https://github.com/user-attachments/assets/1280aa10-7c43-4a19-b285-b7b1f97675a7" />
+
+- Configure Webhook named "Splunk-Alert".
+<img width="350" height="435" alt="image" src="https://github.com/user-attachments/assets/48d10045-9ca0-449c-9b2e-727979aa3a7e" />
+
+- Copy the webhook URI, navigate to your alert in Splunk > Edit > Add Action > Webhook > Paste URI > Save
+  <img width="1602" height="697" alt="image" src="https://github.com/user-attachments/assets/5006aff6-7f8d-4764-a192-57714756e884" />
+
+ Adding Slack Integration
+-In Shuffle's search field (top left), type "Slack", click on it, and drag the Slack connector to the work area.
+<img width="1596" height="705" alt="image" src="https://github.com/user-attachments/assets/ecd94385-275d-4a05-9b5f-af813f277259" />
+
+- Create a new channel in Slack called #alerts
+- In Shuffle, connect the webhook to slack.
