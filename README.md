@@ -209,6 +209,28 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
 
 - Rerun one of the logs from Explore Runs to test the complete integration.
 <img width="506" height="592" alt="image" src="https://github.com/user-attachments/assets/01777012-6255-42be-a976-e27996276b3a" />
+
+<img width="1421" height="731" alt="image" src="https://github.com/user-attachments/assets/d31200fe-251b-4a65-b1d1-f2dc3479e801" />
+
 ### NEED FOR HTTP WITH 200 OK PICTURE
 
+### Step 7:Adding Email Trigger for Response Decision
+= Add a Trigger component from the left panel and drag it to the work area to create interactive response options.
+- Click on the Trigger component, name it appropriately, set Input options to "email", and click the arrow on "Information".
+- Connect the HTTP node to the Trigger input to create a sequential workflow.
 
+<img width="1452" height="725" alt="image" src="https://github.com/user-attachments/assets/8ae52105-4949-4521-b667-7da48e787f05" />
+
+### Step 8: Adding Active Directory Integration
+- Search for Active Directory app and add to workflow.
+- Authenticate with Active Directory  by clicking the + icon for authentication:
+ - Label: AD-Connection
+ - Host: Windows AD VM public IP
+ - Port: 389 (LDAP)
+ - Domain: Your domain name
+ - Username: Administrator (not recommended for production)
+ -  Password: Administrator password
+ - Base DN: Use Get-ADDomain PowerShell command on AD server
+ - Use SSL: False
+
+   <img width="1513" height="731" alt="image" src="https://github.com/user-attachments/assets/4d2efa1e-03b1-4a6e-9e16-7ed4ce987542" />
