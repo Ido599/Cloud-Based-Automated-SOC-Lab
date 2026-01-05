@@ -233,4 +233,21 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
  - Base DN: Use Get-ADDomain PowerShell command on AD server
  - Use SSL: False
 
-   <img width="1513" height="731" alt="image" src="https://github.com/user-attachments/assets/4d2efa1e-03b1-4a6e-9e16-7ed4ce987542" />
+ <img width="1513" height="731" alt="image" src="https://github.com/user-attachments/assets/4d2efa1e-03b1-4a6e-9e16-7ed4ce987542" />
+
+
+<img width="1587" height="646" alt="image" src="https://github.com/user-attachments/assets/8a84f749-99a8-4c3f-ab97-ea351681bf92" />
+
+### Step 9: disable user Adding Confirmation Notifications
+
+Add a second HTTP node to notify analysts when user accounts are successfully disabled. 
+
+<img width="897" height="631" alt="image" src="https://github.com/user-attachments/assets/2de3c203-d4c1-4d1c-9ba3-c91a4b102792" />
+
+### Step 10: Full Workflow
+
+<img width="1210" height="496" alt="WORKFLOW" src="https://github.com/user-attachments/assets/52f08b30-248c-478c-a157-b79c5acd6d22" />
+
+![ALERTS SCREEN SHOT](https://github.com/user-attachments/assets/07429c58-4d4e-4d31-bcda-af40691043e9)
+
+<img width="615" height="292" alt="חסימה בסלאק" src="https://github.com/user-attachments/assets/aa6b4f5a-99a4-43fa-bb3e-fda1f6d6df53" />
