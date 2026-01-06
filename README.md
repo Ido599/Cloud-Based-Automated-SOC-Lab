@@ -224,12 +224,12 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
 ### Step 8: Adding Active Directory Integration
 - Search for Active Directory app and add to workflow.
 - Authenticate with Active Directory  by clicking the + icon for authentication:
- - Label: AD-Connection
+ - Label: Enter a name
  - Host: Windows AD VM public IP
  - Port: 389 (LDAP)
  - Domain: Your domain name
  - Username: Administrator (not recommended for production)
- -  Password: Administrator password
+ - Password: Administrator password
  - Base DN: Use Get-ADDomain PowerShell command on AD server
  - Use SSL: False
 
