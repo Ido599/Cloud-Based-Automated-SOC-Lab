@@ -1,4 +1,4 @@
-# Cloud-Based-Automated-SOC-Lab
+# Cloud Based Automated SOC Lab
 
 
 ## Objective
