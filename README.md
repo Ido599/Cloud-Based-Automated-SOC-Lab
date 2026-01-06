@@ -226,7 +226,7 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
  - Host: Windows AD VM public IP
  - Port: 389 (LDAP)
  - Domain: Your domain name
- - Username: Administrator (not recommended for production)
+ - Username: Administrator 
  - Password: Administrator password
  - Base DN: Use Get-ADDomain PowerShell command on AD server
  - Use SSL: False
