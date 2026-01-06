@@ -212,10 +212,8 @@ Back in Vultr Firewall settings, remove the RDP Rule and add it back, changing s
 
 <img width="1421" height="731" alt="image" src="https://github.com/user-attachments/assets/d31200fe-251b-4a65-b1d1-f2dc3479e801" />
 
-### NEED FOR HTTP WITH 200 OK PICTURE
-
-### Step 7:Adding Email Trigger for Response Decision
-= Add a Trigger component from the left panel and drag it to the work area to create interactive response options.
+### Step 7: Adding Email Trigger for Response Decision
+- Add a Trigger component from the left panel and drag it to the work area to create interactive response options.
 - Click on the Trigger component, name it appropriately, set Input options to "email", and click the arrow on "Information".
 - Connect the HTTP node to the Trigger input to create a sequential workflow.
 
